@@ -54,10 +54,8 @@ public class MyClock extends Activity {
 
 	 private Runnable Timer_Tick = new Runnable() {
 	     public void run() {
-	    	 
-	     //This method runs in the same thread as the UI.               
-
-	     //Do something to the UI thread here
+	    	 //This method runs in the same thread as the UI.               
+	    	 //Do something to the UI thread here
 	    	 setContentView(R.layout.activity_my_clock);
 	    	 centerClock = (TextView) findViewById(R.id.textView);
 	    	 String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
@@ -78,7 +76,7 @@ public class MyClock extends Activity {
 	 
 	 protected void onResume() {
 		  super.onResume();
-		//This timer update the UI every second. For some reason this worked but runnables, threads, and handlers didn't. Why???
+		  //This timer update the UI every second. For some reason this worked but runnables, threads, and handlers didn't. Why???
 		  myTimer = new Timer();
 		  myTimer.schedule(new TimerTask() {
 		         @Override
